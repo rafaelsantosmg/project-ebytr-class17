@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "restore": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test:mocha": "nyc mocha --all --include models --include services --include controllers tests/unit/**/*.js --exit",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
+    "test": "mocha tests/**/*$NAME*.spec.js --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.4.1"
+  }
+}
